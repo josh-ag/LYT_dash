@@ -1,0 +1,27 @@
+@font-face {
+  font-family: Aeonik;
+  src: url("/fonts/Aeonik-Regular.otf") format("truetype"),
+    url("/fonts/Aeonik-Regular.otf") format("truetype");
+  font-weight: "regular";
+}
+
+:root {
+  font-family: Aeonik;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #fbfbfb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  background-color: #fbfbfb;
+  box-sizing: border-box;
+}

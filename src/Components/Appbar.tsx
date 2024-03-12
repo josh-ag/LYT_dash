@@ -11,7 +11,7 @@ export const Appbar = () => {
       bg="#FFFFFF"
       p={6}
       w="full"
-      h={92}
+      h={"92px"}
       align="center"
       justify={"space-between"}
     >

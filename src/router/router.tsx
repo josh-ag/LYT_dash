@@ -7,11 +7,13 @@ import { NotificationsPage } from "../pages/notifications";
 import { MediaPage } from "../pages/media";
 import { SupportPage } from "../pages/support";
 import { SettingsPage } from "../pages/settings";
+import { ErrorElement } from "../Components/ErrorElement";
 
 export const RootRouter = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <ErrorElement />,
     children: [
       { element: <MainPage />, index: true },
       { path: "/analytics", element: <AnalyticsPage /> },

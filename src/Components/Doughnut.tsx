@@ -51,7 +51,7 @@ const chartConfig = {
 
 export const DoughnutChart = ({ label }: { label: string }) => {
   return (
-    <VStack w="full" flex={1}>
+    <VStack w="full">
       <Text
         fontSize={"16px"}
         fontWeight={"400"}

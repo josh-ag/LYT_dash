@@ -122,7 +122,7 @@ const chartConfigs = {
 
 export const StackBarChart = ({ label }: { label: string }) => {
   return (
-    <VStack w="full" flex={2}>
+    <VStack w="full">
       <Text
         fontSize={"16px"}
         fontWeight={"400"}

@@ -30,12 +30,13 @@ const chartData = [
 // Chart configuration
 const chartConfig = {
   type: "doughnut2d",
-  width: "240",
-  height: "240",
+  width: "280",
+  height: "280",
   dataFormat: "json",
   theme: "fusion",
-  pieRadius: 50,
-  doughnutRadius: 40,
+  pieRadius: 100,
+  // bgcolor: "#ff0000",
+  doughnutRadius: 80,
   enableSmartLabels: false,
   labelDistance: -10,
   // Chart Configuration
@@ -51,7 +52,13 @@ const chartConfig = {
 
 export const DoughnutChart = ({ label }: { label: string }) => {
   return (
-    <VStack w="full">
+    <VStack
+      // w="full"
+      h="full"
+      justify={"center"}
+      align={"flex-start"}
+      spacing={"32px"}
+    >
       <Text
         fontSize={"16px"}
         fontWeight={"400"}
@@ -60,7 +67,7 @@ export const DoughnutChart = ({ label }: { label: string }) => {
       >
         {label}
       </Text>
-      <Box w="full">
+      <Box h="full">
         <ReactFC
           {...chartConfig}
           dataSource={{

@@ -1,17 +1,19 @@
 import { Box, Flex, HStack, Text, VStack } from "@chakra-ui/react";
 import { DoughnutChart } from "./Doughnut";
-import { StackBarChart } from "./StackChart";
+import { StackedBarChart } from "./StackedBarChart";
 
 export const ChartComponent = () => {
   return (
     <VStack
       w="full"
+      h="full"
       borderBottom={"1px solid #E5E5E5"}
       pb="12px"
       spacing={"39px"}
     >
       <Flex w="full" justify="flex-end">
         <HStack spacing={"20px"} align={"center"} mr="33px">
+          {/* Chart Legend  */}
           {[
             { label: "Male", color: "#283350" },
             { label: "Female", color: "#0FA44A" },
@@ -31,9 +33,15 @@ export const ChartComponent = () => {
           ))}
         </HStack>
       </Flex>
-      <HStack w="full" justify={"space-around"} align={"flex-start"}>
+      <HStack
+        w="full"
+        h="full"
+        justify={"flex-start"}
+        align={"stretch"}
+        spacing={"48px"}
+      >
         <DoughnutChart label={"Gender"} />
-        <StackBarChart label={"Age Group"} />
+        <StackedBarChart label={"Age Group"} />
       </HStack>
     </VStack>
   );

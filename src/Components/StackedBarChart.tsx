@@ -32,9 +32,12 @@ const chartConfigs = {
   dataSource: {
     chart: {
       showLabels: false,
-      showValue: false,
+      showValues: true,
       drawCrossLine: false,
       showLegend: false,
+      showSum: 1,
+      showPercentValues: false,
+      stack100Percent: true,
       theme: "fusion",
     },
     categories: [
@@ -42,19 +45,15 @@ const chartConfigs = {
         category: [
           {
             label: "group1",
-            value: 40,
           },
           {
             label: "group2",
-            value: 30,
           },
           {
             label: "group3",
-            value: 20,
           },
           {
             label: "group4",
-            value: 10,
           },
         ],
       },
@@ -63,19 +62,22 @@ const chartConfigs = {
       {
         seriesname: "Male",
         color: "#283350",
-
         data: [
           {
-            value: "121000",
+            label: "16-25",
+            value: "16-25",
           },
           {
-            value: "135000",
+            label: "25-35",
+            value: 150,
           },
           {
-            value: "123500",
+            label: "35-55",
+            value: 100,
           },
           {
-            value: "145000",
+            label: "55+",
+            value: 50,
           },
         ],
       },
@@ -84,35 +86,42 @@ const chartConfigs = {
         color: "#0FA44A",
         data: [
           {
-            value: "121000",
+            label: "25-200",
+            value: "25-200",
           },
           {
-            value: "135000",
+            label: "25-35",
+            value: 300,
           },
           {
-            value: "123500",
+            label: "35-55",
+            value: 200,
           },
           {
-            value: "145000",
+            label: "55+",
+            value: 100,
           },
         ],
       },
       {
         seriesname: "Others",
         color: "#FFF854",
-        label: "40%",
         data: [
           {
-            value: "121000",
+            label: "16-25",
+            value: "10-16",
           },
           {
-            value: "135000",
+            label: "25-35",
+            value: 40,
           },
           {
-            value: "123500",
+            label: "35-55",
+            value: 20,
           },
           {
-            value: "145000",
+            label: "55+",
+            value: 10,
           },
         ],
       },
@@ -120,9 +129,9 @@ const chartConfigs = {
   },
 };
 
-export const StackBarChart = ({ label }: { label: string }) => {
+export const StackedBarChart = ({ label }: { label: string }) => {
   return (
-    <VStack w="full">
+    <VStack w="full" align={"flex-start"} spacing={"32px"}>
       <Text
         fontSize={"16px"}
         fontWeight={"400"}

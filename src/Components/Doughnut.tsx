@@ -30,13 +30,13 @@ const chartData = [
 // Chart configuration
 const chartConfig = {
   type: "doughnut2d",
-  width: "280",
-  height: "280",
+  width: "140",
+  height: "140",
   dataFormat: "json",
   theme: "fusion",
-  pieRadius: 100,
+  pieRadius: 20,
   // bgcolor: "#ff0000",
-  doughnutRadius: 80,
+  doughnutRadius: 15,
   enableSmartLabels: false,
   labelDistance: -10,
   // Chart Configuration

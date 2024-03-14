@@ -1,5 +1,4 @@
 import { Button, HStack, Text, VStack } from "@chakra-ui/react";
-import { PostItem } from "./PostItem";
 import { Country } from "./Country";
 
 //Posts

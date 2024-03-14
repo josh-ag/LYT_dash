@@ -25,19 +25,21 @@ const chartData = [
 // Chart configuration
 const chartConfigs = {
   type: "stackedbar2d",
-  width: "400",
-  height: "400",
+  width: "250",
+  height: "144",
   dataFormat: "json",
 
   dataSource: {
     chart: {
       showLabels: false,
-      showValues: true,
+      showValues: false,
       drawCrossLine: false,
       showLegend: false,
-      showSum: 1,
-      showPercentValues: false,
-      stack100Percent: true,
+      showYAxisValues: false,
+      // showSum: 1,
+      showPercentValues: true,
+      showPercentInToolTip: false,
+      // stack100Percent: 1,
       theme: "fusion",
     },
     categories: [
@@ -65,19 +67,19 @@ const chartConfigs = {
         data: [
           {
             label: "16-25",
-            value: "16-25",
+            value: 50,
           },
           {
             label: "25-35",
-            value: 150,
+            value: 35,
           },
           {
             label: "35-55",
-            value: 100,
+            value: 25,
           },
           {
             label: "55+",
-            value: 50,
+            value: 15,
           },
         ],
       },
@@ -87,19 +89,19 @@ const chartConfigs = {
         data: [
           {
             label: "25-200",
-            value: "25-200",
+            value: 85,
           },
           {
             label: "25-35",
-            value: 300,
+            value: 60,
           },
           {
             label: "35-55",
-            value: 200,
+            value: 40,
           },
           {
             label: "55+",
-            value: 100,
+            value: 20,
           },
         ],
       },
@@ -109,19 +111,19 @@ const chartConfigs = {
         data: [
           {
             label: "16-25",
-            value: "10-16",
+            value: 30,
           },
           {
             label: "25-35",
-            value: 40,
-          },
-          {
-            label: "35-55",
             value: 20,
           },
           {
-            label: "55+",
+            label: "35-55",
             value: 10,
+          },
+          {
+            label: "55+",
+            value: 5,
           },
         ],
       },

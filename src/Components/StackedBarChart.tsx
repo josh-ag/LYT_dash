@@ -6,26 +6,10 @@ import { Box, Text, VStack } from "@chakra-ui/react";
 // Include the fusioncharts library
 ReactFC.fcRoot(FusionCharts, Charts);
 
-// Chart data
-const chartData = [
-  {
-    label: "Jan",
-    value: "420000",
-  },
-  {
-    label: "Feb",
-    value: "810000",
-  },
-  {
-    label: "Mar",
-    value: "720000",
-  },
-];
-
 // Chart configuration
 const chartConfigs = {
   type: "stackedbar2d",
-  width: "250",
+  width: "100%",
   height: "144",
   dataFormat: "json",
 
@@ -40,6 +24,8 @@ const chartConfigs = {
       showPercentValues: true,
       showPercentInToolTip: false,
       // stack100Percent: 1,
+      numDivLines: 0,
+      valueFont: "Aeonik",
       theme: "fusion",
     },
     categories: [
@@ -133,7 +119,7 @@ const chartConfigs = {
 
 export const StackedBarChart = ({ label }: { label: string }) => {
   return (
-    <VStack w="full" align={"flex-start"} spacing={"32px"}>
+    <VStack align={"flex-start"} spacing={"32px"}>
       <Text
         fontSize={"16px"}
         fontWeight={"400"}
@@ -142,7 +128,7 @@ export const StackedBarChart = ({ label }: { label: string }) => {
       >
         {label}
       </Text>
-      <Box w="full">
+      <Box w={"300px"}>
         <ReactFC {...chartConfigs} />
       </Box>
     </VStack>

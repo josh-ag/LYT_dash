@@ -35,9 +35,8 @@ export const ChartComponent = () => {
       </Flex>
       <HStack
         w="full"
-        h="full"
-        justify={"flex-start"}
         align={"stretch"}
+        justify={"flex-start"}
         spacing={"48px"}
       >
         <DoughnutChart label={"Gender"} />

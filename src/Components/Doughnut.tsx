@@ -30,44 +30,37 @@ const chartData = [
 // Chart configuration
 const chartConfig = {
   type: "doughnut2d",
-  width: "140",
+  width: "100%",
   height: "140",
   dataFormat: "json",
   theme: "fusion",
-  pieRadius: 20,
-  // bgcolor: "#ff0000",
-  doughnutRadius: 15,
+  numberSuffix: "%",
+  pieRadius: 50,
+  doughnutRadius: 40,
   enableSmartLabels: false,
+  showPercentValues: false,
   labelDistance: -10,
-  // Chart Configuration
   baseFontSize: "12px",
   baseFontWeight: "500",
   baseFont: "Aeonik",
   baseFontColor: "#131313",
-  showPercentValues: "1",
   showLabels: false,
   showLegend: false,
-  showLegendPercentValue: false,
 };
 
 export const DoughnutChart = ({ label }: { label: string }) => {
   return (
-    <VStack
-      // w="full"
-      h="full"
-      justify={"center"}
-      align={"flex-start"}
-      spacing={"32px"}
-    >
+    <VStack h="full" justify={"center"} align={"flex-start"} spacing={"32px"}>
       <Text
         fontSize={"16px"}
         fontWeight={"400"}
         lineHeight={"19.2px"}
         color={"#131313"}
+        ml={"32px"}
       >
         {label}
       </Text>
-      <Box h="full">
+      <Box w="250px">
         <ReactFC
           {...chartConfig}
           dataSource={{

@@ -7,6 +7,15 @@ import Column2D from "fusioncharts/fusioncharts.charts";
 // Include the theme as fusion
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
 import { Box } from "@chakra-ui/react";
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      ReactFC: any;
+    }
+  }
+}
+
 //Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Column2D, FusionTheme);
 
@@ -66,7 +75,7 @@ const chartData = [
 ];
 
 // Create a JSON object to store the chart configurations
-const chartConfigs = {
+const chartConfig = {
   type: "column2d", // The chart type
   width: "100%", // Width of the chart
   height: "369", // Height of the chart
@@ -94,7 +103,7 @@ const chartConfigs = {
 export const BarChart = () => {
   return (
     <Box w="full" bg="#fff" rounded={"4px"} px={"32px"} py={"23px"}>
-      <ReactFC {...chartConfigs} />
+      <ReactFC {...chartConfig} />
     </Box>
   );
 };

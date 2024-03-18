@@ -2,6 +2,13 @@ import FusionCharts from "fusioncharts";
 import Charts from "fusioncharts/fusioncharts.charts";
 import ReactFC from "react-fusioncharts";
 import { Box, Text, VStack } from "@chakra-ui/react";
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      ReactFC: any;
+    }
+  }
+}
 
 // Include the fusioncharts library
 ReactFC.fcRoot(FusionCharts, Charts);

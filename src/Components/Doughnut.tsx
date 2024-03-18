@@ -3,6 +3,14 @@ import FusionCharts from "fusioncharts";
 import Charts from "fusioncharts/fusioncharts.charts";
 import ReactFC from "react-fusioncharts";
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      ReactFC: any;
+    }
+  }
+}
+
 // Include the fusioncharts library
 ReactFC.fcRoot(FusionCharts, Charts);
 

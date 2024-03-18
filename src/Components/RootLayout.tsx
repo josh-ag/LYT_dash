@@ -5,7 +5,16 @@ import { Box, HStack } from "@chakra-ui/react";
 export const RootLayout = () => {
   return (
     <HStack w={"100%"} h={"100vh"} bg={"#FBFBFB"} spacing={0} pos="relative">
-      <Box pos="fixed" h="full" w="218px" zIndex={2} top={0} left={0}>
+      <Box
+        pos="fixed"
+        h="full"
+        minH={"100vh"}
+        w="218px"
+        zIndex={2}
+        top={0}
+        left={0}
+        overflowY={"auto"}
+      >
         <SideNav />
       </Box>
       <Box w="full" h="full" style={{ marginLeft: "218px" }} zIndex={1}>

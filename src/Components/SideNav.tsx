@@ -1,4 +1,4 @@
-import { Flex, VStack, Link, HStack, Text } from "@chakra-ui/react";
+import { Flex, VStack, Link, HStack, Text, Stack } from "@chakra-ui/react";
 import { NavItem } from "./NavItem";
 import { Link as RouterLink } from "react-router-dom";
 
@@ -16,38 +16,43 @@ const items = [
 export const SideNav = () => {
   return (
     <VStack
-      style={{ width: "218px", backgroundColor: "#fff", height: "100%" }}
+      style={{ backgroundColor: "#fff" }}
       pos={"relative"}
       spacing={"32px"}
-      align={"space-between"}
+      align={"center"}
+      justify={"space-between"}
+      h="full"
+      width="full"
     >
-      <Flex justify={"center"} align={"center"} h={"92px"}>
-        <svg
-          width="55"
-          height="21"
-          viewBox="0 0 55 21"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M2 1V18.5H18.9014" stroke="#0FA44A" strokeWidth="4" />
-          <path
-            d="M14.8311 2.25L23.2818 8.91667M23.2818 8.91667L32.155 2.25M23.2818 8.91667V19.75"
-            stroke="#0FA44A"
-            strokeWidth="4"
-          />
-          <path
-            d="M36.3801 2.875H45.2534M54.1266 2.875H45.2534M45.2534 2.875V20.375"
-            stroke="#0FA44A"
-            strokeWidth="4"
-          />
-        </svg>
-      </Flex>
-      <VStack spacing={"29px"} w={"full"}>
-        {items.map((item, index) => (
-          <NavItem item={item} key={index} />
-        ))}
-      </VStack>
+      <Stack direction={"column"} spacing={"29px"}>
+        <Flex justify={"center"} align={"center"} h={"92px"} p={6}>
+          <svg
+            width="55"
+            height="21"
+            viewBox="0 0 55 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M2 1V18.5H18.9014" stroke="#0FA44A" strokeWidth="4" />
+            <path
+              d="M14.8311 2.25L23.2818 8.91667M23.2818 8.91667L32.155 2.25M23.2818 8.91667V19.75"
+              stroke="#0FA44A"
+              strokeWidth="4"
+            />
+            <path
+              d="M36.3801 2.875H45.2534M54.1266 2.875H45.2534M45.2534 2.875V20.375"
+              stroke="#0FA44A"
+              strokeWidth="4"
+            />
+          </svg>
+        </Flex>
 
+        <VStack spacing={"29px"} w={"full"}>
+          {items.map((item, index) => (
+            <NavItem item={item} key={index} />
+          ))}
+        </VStack>
+      </Stack>
       <Link
         as={RouterLink}
         to={"/"}
@@ -55,8 +60,7 @@ export const SideNav = () => {
         p={"10px"}
         _hover={{ textDecoration: "none" }}
         alignSelf={"flex-end"}
-        pos="absolute"
-        bottom={"24px"}
+        mb={"24px"}
       >
         <HStack spacing={"16px"} ml={"29.5px"}>
           <svg

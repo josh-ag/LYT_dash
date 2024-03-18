@@ -89,7 +89,7 @@ export const PostItem = ({ post }: { post: PostItemProps }) => {
       </HStack>
 
       <HStack align={"center"} spacing={1}>
-        {[1, 2, 3].map((item: any, index) => (
+        {[1, 2, 3].map((_, index) => (
           <svg
             width="6"
             height="6"

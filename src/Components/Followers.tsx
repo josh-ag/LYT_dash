@@ -1,5 +1,4 @@
 import { HStack, Text, VStack } from "@chakra-ui/react";
-import { BarChart } from "./Barchart";
 
 export const Followers = () => {
   return (

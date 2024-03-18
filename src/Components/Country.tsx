@@ -1,4 +1,4 @@
-import { Flex, HStack, Image, Text, VStack } from "@chakra-ui/react";
+import { HStack, Text, VStack } from "@chakra-ui/react";
 
 type CountryProps = {
   name: string;

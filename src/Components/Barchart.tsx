@@ -1,109 +1,83 @@
-// Include the react-fusioncharts component
-import ReactFC from "react-fusioncharts";
-// Include the fusioncharts library
-import FusionCharts from "fusioncharts";
-// Include the chart type
-import Column2D from "fusioncharts/fusioncharts.charts";
-// Include the theme as fusion
-import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
+import { useState, useEffect } from "react";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 import { Box } from "@chakra-ui/react";
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      ReactFC: any;
-    }
-  }
-}
-
-//Adding the chart and theme as dependency to the core fusioncharts
-ReactFC.fcRoot(FusionCharts, Column2D, FusionTheme);
-
-// Preparing the chart data
-const chartData = [
-  {
-    label: "Mon",
-    value: "30",
-    color: "#0FA44A",
-    alpha: "10",
-    hoverAlpha: "40",
-  },
-  {
-    label: "Tue",
-    value: "20",
-    color: "#0FA44A",
-    alpha: "10",
-    hoverAlpha: "40",
-  },
-  {
-    label: "Wed",
-    value: "65",
-    color: "#0FA44A",
-    alpha: "10",
-    hoverAlpha: "40",
-  },
-  {
-    label: "Thur",
-    value: "45",
-    baseFontSize: "18",
-
-    color: "#0FA44A",
-    alpha: "10",
-    hoverAlpha: "40",
-  },
-  {
-    label: "Fri",
-    value: "95",
-    color: "#0FA44A",
-    alpha: "10",
-    hoverAlpha: "40",
-  },
-  {
-    label: "Sat",
-    value: "55",
-    color: "#0FA44A",
-    alpha: "10",
-    hoverAlpha: "40",
-  },
-  {
-    label: "Sun",
-    value: "80",
-    color: "#0FA44A",
-    hoverAlpha: "40",
-    alpha: "10",
-  },
-];
-
-// Create a JSON object to store the chart configurations
-const chartConfig = {
-  type: "column2d", // The chart type
-  width: "100%", // Width of the chart
-  height: "369", // Height of the chart
-  dataFormat: "json", // Data type
-
-  dataSource: {
-    // Chart Configuration
-
-    chart: {
-      baseFontSize: "20px",
-      baseFontColor: "#6A6A6A",
-      baseFontWeight: "400",
-      divLineDashed: true,
-      divLineDashGap: 6,
-      divDashLen: 50,
-      divLineColor: "#8F8F8F",
-      drawCrossLine: false,
-      theme: "fusion", //Set the theme for your chart
-    },
-    // Chart Data
-    data: chartData,
-  },
-};
-
 export const BarChart = () => {
+  const [chartOptions, setChartOptions] = useState({});
+
+  useEffect(() => {
+    setChartOptions({
+      chart: {
+        type: "column",
+        width: "100%",
+        height: "100%",
+      },
+      title: { text: "" },
+      legend: {
+        enabled: false,
+      },
+      xAxis: {
+        categories: ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"],
+        title: { text: null },
+        labels: {
+          style: {
+            fontFamily: "Aeonik",
+            fontSize: "20px",
+            fontWeight: "400",
+            color: "#6A6A6A",
+          },
+        },
+      },
+      yAxis: {
+        title: { enabled: false },
+        max: 100,
+        min: 0,
+        labels: {
+          style: {
+            fontFamily: "Aeonik",
+            fontSize: "20px",
+            fontWeight: "400",
+            color: "#6A6A6A",
+          },
+        },
+        gridLineColor: "rgba(143, 143, 143, 30%)",
+        gridLineDashStyle: "dash",
+        gridLineWidth: 2,
+      },
+
+      plotOptions: {
+        series: {
+          // general options for all series
+        },
+
+        column: {
+          // shared options for all column series
+          color: "#0FA44A",
+          opacity: 0.4,
+        },
+      },
+      series: [
+        {
+          name: "Engagement Rate",
+
+          data: [
+            ["Mon", 30],
+            ["Tue", 20],
+            ["Wed", 63],
+            ["Thur", 50],
+            ["Fri", 98],
+            ["Sat", 58],
+            ["Sun", 80],
+          ],
+        },
+      ],
+    });
+  }, []);
+
   return (
     <Box w="full" bg="#fff" rounded={"4px"} px={"32px"} py={"23px"}>
-      <ReactFC {...chartConfig} />
+      <HighchartsReact highcharts={Highcharts} options={chartOptions} />
     </Box>
   );
 };

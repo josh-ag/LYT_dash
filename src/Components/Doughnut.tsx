@@ -1,62 +1,59 @@
+import { useState, useEffect } from "react";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 import { Box, Text, VStack } from "@chakra-ui/react";
-import FusionCharts from "fusioncharts";
-import Charts from "fusioncharts/fusioncharts.charts";
-import ReactFC from "react-fusioncharts";
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      ReactFC: any;
-    }
-  }
-}
-
-// Include the fusioncharts library
-ReactFC.fcRoot(FusionCharts, Charts);
-
-// Chart data
-const chartData = [
-  {
-    label: "Male",
-    value: 35,
-    color: "#283350",
-  },
-  {
-    label: "Female",
-    value: 55,
-    color: "#0FA44A",
-  },
-
-  {
-    label: "Others",
-    value: 15,
-    color: "#FFF854",
-    showValue: true,
-  },
-];
-
-// Chart configuration
-const chartConfig = {
-  type: "doughnut2d",
-  width: "100%",
-  height: "140",
-  dataFormat: "json",
-  theme: "fusion",
-  numberSuffix: "%",
-  pieRadius: 50,
-  doughnutRadius: 40,
-  enableSmartLabels: false,
-  showPercentValues: false,
-  labelDistance: -10,
-  baseFontSize: "12px",
-  baseFontWeight: "500",
-  baseFont: "Aeonik",
-  baseFontColor: "#131313",
-  showLabels: false,
-  showLegend: false,
-};
 
 export const DoughnutChart = ({ label }: { label: string }) => {
+  const [chartOptions, setChartOptions] = useState({});
+
+  useEffect(() => {
+    setChartOptions({
+      chart: {
+        type: "pie",
+        width: "100%",
+      },
+      title: { text: "" },
+      legend: {
+        enabled: false,
+      },
+
+      colors: ["#283350", "#0FA44A", "#FFF854"],
+      plotOptions: {
+        series: {
+          borderWidth: 0,
+          colorByPoint: true,
+          type: "pie",
+          size: "70%",
+          innerSize: "80%",
+
+          dataLabels: {
+            enabled: true,
+            format:
+              '<span style="font-family:Aeonik;font-size:12px;color:#131313;font-weight:500;line-height:14.4px;">{point.y} % </span>',
+            distance: 0,
+            style: {
+              fontFamily: "Aeonik",
+              fontWeight: "500",
+              fontSize: "12px",
+              lineHeight: "14.4px",
+              color: "#131313",
+            },
+          },
+        },
+      },
+      series: [
+        {
+          name: "Gender",
+          data: [
+            ["Male", 35],
+            ["Female", 55],
+            ["Others", 15],
+          ],
+        },
+      ],
+    });
+  }, []);
+
   return (
     <VStack h="full" justify={"center"} align={"flex-start"} spacing={"32px"}>
       <Text
@@ -69,13 +66,7 @@ export const DoughnutChart = ({ label }: { label: string }) => {
         {label}
       </Text>
       <Box w="250px">
-        <ReactFC
-          {...chartConfig}
-          dataSource={{
-            chart: chartConfig,
-            data: chartData,
-          }}
-        />
+        <HighchartsReact highcharts={Highcharts} options={chartOptions} />
       </Box>
     </VStack>
   );

@@ -10,7 +10,8 @@ export const DoughnutChart = ({ label }: { label: string }) => {
     setChartOptions({
       chart: {
         type: "pie",
-        width: "100%",
+        width: 219,
+        height: 219,
       },
       title: { text: "" },
       legend: {
@@ -55,7 +56,7 @@ export const DoughnutChart = ({ label }: { label: string }) => {
   }, []);
 
   return (
-    <VStack h="full" justify={"center"} align={"flex-start"} spacing={"32px"}>
+    <VStack h="full" align={"flex-start"} spacing={"32px"}>
       <Text
         fontSize={"16px"}
         fontWeight={"400"}
@@ -65,7 +66,7 @@ export const DoughnutChart = ({ label }: { label: string }) => {
       >
         {label}
       </Text>
-      <Box w="250px">
+      <Box w="full" minH={"219px"} h="full">
         <HighchartsReact highcharts={Highcharts} options={chartOptions} />
       </Box>
     </VStack>

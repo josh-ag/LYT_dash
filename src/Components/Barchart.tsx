@@ -76,7 +76,15 @@ export const BarChart = () => {
   }, []);
 
   return (
-    <Box w="full" bg="#fff" rounded={"4px"} px={"32px"} py={"23px"}>
+    <Box
+      w="full"
+      bg="#fff"
+      rounded={"4px"}
+      px={"32px"}
+      py={"23px"}
+      minH={"369px"}
+      h="auto"
+    >
       <HighchartsReact highcharts={Highcharts} options={chartOptions} />
     </Box>
   );

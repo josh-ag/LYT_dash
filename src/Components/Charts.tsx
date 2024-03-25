@@ -7,6 +7,7 @@ export const ChartComponent = () => {
     <VStack
       w="full"
       h="full"
+      minW={"full"}
       borderBottom={"1px solid #E5E5E5"}
       pb="12px"
       spacing={"39px"}
@@ -33,12 +34,7 @@ export const ChartComponent = () => {
           ))}
         </HStack>
       </Flex>
-      <HStack
-        w="full"
-        align={"stretch"}
-        justify={"flex-start"}
-        spacing={"48px"}
-      >
+      <HStack w="full" justify={"flex-start"} spacing={"48px"}>
         <DoughnutChart label={"Gender"} />
         <StackedBarChart label={"Age Group"} />
       </HStack>

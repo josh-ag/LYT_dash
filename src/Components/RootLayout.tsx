@@ -4,7 +4,13 @@ import { Box, HStack } from "@chakra-ui/react";
 
 export const RootLayout = () => {
   return (
-    <HStack w={"100%"} h={"100vh"} bg={"#FBFBFB"} spacing={0} pos="relative">
+    <HStack
+      w={"full"}
+      h={"auto"}
+      bg={"#FBFBFB"}
+      pos="relative"
+      alignItems={"stretch"}
+    >
       <Box
         pos="fixed"
         h="full"
@@ -17,7 +23,7 @@ export const RootLayout = () => {
       >
         <SideNav />
       </Box>
-      <Box w="full" h="full" style={{ marginLeft: "218px" }} zIndex={1}>
+      <Box w="full" h="auto" style={{ marginLeft: "218px" }} zIndex={1}>
         <Outlet />
       </Box>
     </HStack>

@@ -1,4 +1,4 @@
-import { HStack, Link, Text, VStack } from "@chakra-ui/react";
+import { HStack, Link, Stack, Text, VStack } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { Appbar } from "../Components/Appbar";
 import { Followers } from "../Components/Followers";
@@ -43,8 +43,8 @@ export default function MainPage() {
         </HStack>
       </VStack>
 
-      <HStack w="full" spacing={"46px"} px={"32px"} align={"stretch"}>
-        <VStack w="full" spacing={"32px"} h="full">
+      <HStack w="full" h="auto" spacing={"46px"} px={"32px"} align={"stretch"}>
+        <VStack w="full" spacing={"36px"} h="auto">
           <Engagement />
           <PostActivity />
         </VStack>

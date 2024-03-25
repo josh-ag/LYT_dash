@@ -34,7 +34,6 @@ export const Engagement = () => {
           Weekly
         </Button>
       </HStack>
-
       <BarChart />
     </VStack>
   );

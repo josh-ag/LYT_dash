@@ -13,6 +13,7 @@ export const BarChart = () => {
         width: "100%",
         height: "100%",
       },
+      accessibility: { enabled: false },
       title: { text: "" },
       legend: {
         enabled: false,

@@ -13,6 +13,7 @@ export const DoughnutChart = ({ label }: { label: string }) => {
         width: 219,
         height: 219,
       },
+      accessibility: { enabled: false },
       title: { text: "" },
       legend: {
         enabled: false,

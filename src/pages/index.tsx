@@ -1,4 +1,4 @@
-import { HStack, Link, Stack, Text, VStack } from "@chakra-ui/react";
+import { HStack, Link, Text, VStack } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { Appbar } from "../Components/Appbar";
 import { Followers } from "../Components/Followers";

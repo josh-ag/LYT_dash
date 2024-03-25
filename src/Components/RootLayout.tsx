@@ -11,7 +11,7 @@ export const RootLayout = () => {
       pos="relative"
       alignItems={"stretch"}
     >
-      <Box
+      {/* <Box
         pos="fixed"
         h="full"
         minH={"100vh"}
@@ -20,9 +20,9 @@ export const RootLayout = () => {
         top={0}
         left={0}
         overflowY={"auto"}
-      >
-        <SideNav />
-      </Box>
+      > */}
+      <SideNav />
+      {/* </Box> */}
       <Box w="full" h="auto" style={{ marginLeft: "218px" }} zIndex={1}>
         <Outlet />
       </Box>

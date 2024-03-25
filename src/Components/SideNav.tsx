@@ -17,14 +17,19 @@ export const SideNav = () => {
   return (
     <VStack
       style={{ backgroundColor: "#fff" }}
-      pos={"relative"}
       spacing={"32px"}
       align={"center"}
       justify={"space-between"}
       h="full"
-      width="full"
+      minH={"100vh"}
+      w="218px"
+      zIndex={2}
+      pos="fixed"
+      top={0}
+      left={0}
+      overflowY={"auto"}
     >
-      <Stack direction={"column"} spacing={"29px"}>
+      <Stack direction={"column"} spacing={"29px"} w="full">
         <Flex justify={"center"} align={"center"} h={"92px"} p={6}>
           <svg
             width="55"

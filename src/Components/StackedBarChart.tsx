@@ -13,6 +13,7 @@ export const StackedBarChart = ({ label }: { label: string }) => {
         width: 510,
         height: 288,
       },
+      accessibility: { enabled: false },
       colors: ["#FFF854", "#0FA44A", "#283350"],
       title: {
         text: null,

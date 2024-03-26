@@ -15,7 +15,13 @@ export const Appbar = () => {
       align="center"
       justify={"space-between"}
     >
-      <Text fontSize={20} fontWeight={400}>
+      <Text
+        fontSize={"20px"}
+        fontWeight={"400"}
+        lineHeight={"24"}
+        color="#1A1A1A"
+        noOfLines={1}
+      >
         Metrics looking good, Snow!
       </Text>
 

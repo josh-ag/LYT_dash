@@ -4,7 +4,7 @@ import { TopLocations } from "./TopLocations";
 
 export const Audience = () => {
   return (
-    <VStack w="full" spacing={"20px"} h="full">
+    <VStack flex={1} w="full" spacing={"20px"} h="full">
       <HStack w="full" justify={"space-between"} align={"center"}>
         <Text
           fontSize={"20px"}

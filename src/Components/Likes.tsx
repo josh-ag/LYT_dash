@@ -3,7 +3,7 @@ import { HStack, Text, VStack } from "@chakra-ui/react";
 export const Likes = () => {
   return (
     <VStack
-      minW={"350px"}
+      // minW={"350px"}
       w="full"
       height={"auto"}
       minHeight={"160px"}
@@ -38,7 +38,7 @@ export const Likes = () => {
         </svg>
       </HStack>
       <Text
-        fontSize={"40px"}
+        fontSize={{ base: "24px", "2xl": "40px" }}
         fontWeight={500}
         color="#1A1A1A"
         alignSelf={"flex-start"}
@@ -81,7 +81,12 @@ export const Likes = () => {
               1.21%
             </Text>
           </HStack>
-          <Text fontSize={"16px"} fontWeight={400} color="#6A6A6A">
+          <Text
+            fontSize={"16px"}
+            fontWeight={400}
+            color="#6A6A6A"
+            noOfLines={1}
+          >
             in the last 7 days
           </Text>
         </HStack>

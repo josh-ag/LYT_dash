@@ -10,8 +10,8 @@ export const DoughnutChart = ({ label }: { label: string }) => {
     setChartOptions({
       chart: {
         type: "pie",
-        width: 219,
-        height: 219,
+        width: 200,
+        height: 200,
       },
       accessibility: { enabled: false },
       title: { text: "" },
@@ -25,13 +25,13 @@ export const DoughnutChart = ({ label }: { label: string }) => {
           borderWidth: 0,
           colorByPoint: true,
           type: "pie",
-          size: "70%",
+          size: "60%",
           innerSize: "80%",
 
           dataLabels: {
             enabled: true,
-            format:
-              '<span style="font-family:Aeonik;font-size:12px;color:#131313;font-weight:500;line-height:14.4px;">{point.y} % </span>',
+            format: "<span>{point.y} % </span>",
+
             distance: 0,
             style: {
               fontFamily: "Aeonik",
@@ -57,7 +57,7 @@ export const DoughnutChart = ({ label }: { label: string }) => {
   }, []);
 
   return (
-    <VStack h="full" align={"flex-start"} spacing={"32px"}>
+    <VStack w="auto" h="auto" align={"flex-start"} spacing={"32px"}>
       <Text
         fontSize={"16px"}
         fontWeight={"400"}
@@ -67,7 +67,7 @@ export const DoughnutChart = ({ label }: { label: string }) => {
       >
         {label}
       </Text>
-      <Box w="full" minH={"219px"} h="full">
+      <Box>
         <HighchartsReact highcharts={Highcharts} options={chartOptions} />
       </Box>
     </VStack>

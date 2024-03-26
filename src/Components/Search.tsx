@@ -7,7 +7,7 @@ type SearchPropTypes = {
 
 export const Search = ({ searchTerm, setSearchTerm }: SearchPropTypes) => {
   return (
-    <InputGroup w={427} alignItems={"center"} justifyContent={"center"}>
+    <InputGroup w={"427px"} alignItems={"center"} justifyContent={"center"}>
       <InputLeftElement pointerEvents="none">
         <svg
           width="24"
@@ -27,12 +27,16 @@ export const Search = ({ searchTerm, setSearchTerm }: SearchPropTypes) => {
       <Input
         variant="outline"
         size="lg"
+        ringColor={"#8F8F8F"}
         placeContent="Search"
         placeholder="Search"
         rounded={4}
+        borderWidth={"1px"}
+        borderColor={"#8F8F8F"}
         value={searchTerm}
         fontWeight={500}
         fontSize={16}
+        opacity={"30%"}
         color={"#6A6A6A"}
         onChange={(e) => setSearchTerm(e.target.value)}
       />

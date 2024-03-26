@@ -34,10 +34,16 @@ export const ChartComponent = () => {
           ))}
         </HStack>
       </Flex>
-      <HStack w="full" justify={"flex-start"} spacing={"48px"}>
+      <Flex
+        direction={{ base: "column", sm: "column", md: "column", lg: "row" }}
+        w="full"
+        h="auto"
+        justify={"flex-start"}
+        gap={"48px"}
+      >
         <DoughnutChart label={"Gender"} />
         <StackedBarChart label={"Age Group"} />
-      </HStack>
+      </Flex>
     </VStack>
   );
 };

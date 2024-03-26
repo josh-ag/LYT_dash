@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { Box } from "@chakra-ui/react";
@@ -10,8 +10,7 @@ export const BarChart = () => {
     setChartOptions({
       chart: {
         type: "column",
-        width: "100%",
-        height: "100%",
+        width: null,
       },
       accessibility: { enabled: false },
       title: { text: "" },
@@ -22,10 +21,14 @@ export const BarChart = () => {
         categories: ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"],
         title: { text: null },
         labels: {
+          formatter: (point: any) => {
+            return point.value;
+          },
           style: {
             fontFamily: "Aeonik",
             fontSize: "20px",
             fontWeight: "400",
+            lineHeight: "24px",
             color: "#6A6A6A",
           },
         },
@@ -48,20 +51,15 @@ export const BarChart = () => {
       },
 
       plotOptions: {
-        series: {
-          // general options for all series
-        },
-
         column: {
-          // shared options for all column series
           color: "#0FA44A",
           opacity: 0.4,
         },
       },
+
       series: [
         {
           name: "Engagement Rate",
-
           data: [
             ["Mon", 30],
             ["Tue", 20],
@@ -77,15 +75,7 @@ export const BarChart = () => {
   }, []);
 
   return (
-    <Box
-      w="full"
-      bg="#fff"
-      rounded={"4px"}
-      px={"32px"}
-      py={"23px"}
-      minH={"369px"}
-      h="auto"
-    >
+    <Box bg="#fff" w="full" rounded={"4px"} px={"32px"} py={"23px"}>
       <HighchartsReact highcharts={Highcharts} options={chartOptions} />
     </Box>
   );

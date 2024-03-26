@@ -10,8 +10,8 @@ export const StackedBarChart = ({ label }: { label: string }) => {
     setChartOptions({
       chart: {
         type: "bar",
-        width: 510,
-        height: 288,
+        width: 400,
+        height: 200,
       },
       accessibility: { enabled: false },
       colors: ["#FFF854", "#0FA44A", "#283350"],
@@ -104,7 +104,7 @@ export const StackedBarChart = ({ label }: { label: string }) => {
   }, []);
 
   return (
-    <VStack h="full" align={"flex-start"} spacing={"32px"}>
+    <VStack h="full" w="auto" align={"flex-start"} spacing={"32px"}>
       <Text
         fontSize={"16px"}
         fontWeight={"400"}
@@ -114,7 +114,7 @@ export const StackedBarChart = ({ label }: { label: string }) => {
       >
         {label}
       </Text>
-      <Box minH={"288px"}>
+      <Box>
         <HighchartsReact highcharts={Highcharts} options={chartOptions} />
       </Box>
     </VStack>

@@ -6,7 +6,13 @@ export const Profile = () => {
     <HStack alignItems={"center"} px={"32px"}>
       <Avatar width={"40px"} height={"40px"} src={profile} />
       <VStack spacing={0}>
-        <Text color="#1A1A1A" fontWeight={400} fontSize={16}>
+        <Text
+          fontFamily={"Aeonik"}
+          color="#1A1A1A"
+          lineHeight={"19.2px"}
+          fontWeight={400}
+          fontSize={"16px"}
+        >
           Snow Olohijere
         </Text>
         <Text color="#6A6A6A" fontSize={12} fontWeight={400}>

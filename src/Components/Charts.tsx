@@ -35,9 +35,15 @@ export const ChartComponent = () => {
         </HStack>
       </Flex>
       <Flex
-        direction={{ base: "column", sm: "column", md: "column", lg: "row" }}
+        direction={{
+          base: "column",
+          sm: "column",
+          md: "row",
+          lg: "row",
+          xl: "column",
+          "2xl": "row",
+        }}
         w="full"
-        h="auto"
         justify={"flex-start"}
         gap={"48px"}
       >

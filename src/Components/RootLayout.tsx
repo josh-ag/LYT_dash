@@ -13,7 +13,7 @@ export const RootLayout = () => {
       alignItems={"stretch"}
     >
       <SideNav />
-      <Box style={{ marginLeft: "218px" }} zIndex={1}>
+      <Box ml={{ base: 0, sm: "0px", lg: "218px" }} zIndex={1}>
         <Outlet />
       </Box>
     </Flex>

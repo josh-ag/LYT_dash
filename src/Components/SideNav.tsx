@@ -28,6 +28,7 @@ export const SideNav = () => {
       top={0}
       left={0}
       overflowY={"auto"}
+      display={{ base: "none", sm: "none", lg: "flex" }}
     >
       <Stack direction={"column"} spacing={"29px"} w="full">
         <Flex justify={"center"} align={"center"} h={"92px"} p={6}>
